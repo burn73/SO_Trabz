@@ -1,4 +1,3 @@
 node 1 window 2 avg 10
 node 2 window 2 max 10
 node 3 filter 2 <= 3
-cenas
