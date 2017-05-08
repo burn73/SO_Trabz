@@ -1,0 +1,56 @@
+o que faz cada nó:
+
+void no_fun(name, cmd, filhos) {
+	pipe = open_pipe(name);
+
+	while (input = read_line(pipe)) {
+		res = cmd(input);
+
+		if(res != "") {
+			if(len(filhos) == 0){
+				for(filho in filhos){
+					filho.write(res);
+				}
+			}
+			else{
+				printf(res);
+			}
+			
+		}
+	}
+}
+
+
+config.file:
+n1 filter
+n2 spawn
+n3 const
+
+
+main() {
+	entries = read_config_file(config.file);
+	/*
+	{
+		"n1" -> ("filter", ["n2", "n3"]),
+		"n2" -> ("spawn", []),
+		"n3" -> ("const", [])
+	}
+	*/
+	for(entry in entries){
+		name = entry.name;
+		cmd = entry.cmd;
+		filhos = entry.filhos;
+
+		pipe = create_named_pipe(name);
+		
+		pid = fork();
+
+		if(pid == 0){
+			no_fun(name, cmd, filhos);
+		}
+	}
+
+	// todos os nós estão a correr
+
+	redirect_stdin_para_os_parents(); // neste caso n1
+}
