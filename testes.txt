@@ -1,6 +1,7 @@
 node 1 window 2 avg 10
 node 2 window 2 max 10
 node 3 filter 2 <= 3
+<<<<<<< HEAD
 node 4 const cooling
 node 5 filter 2 > 3
 node 6 const warming
@@ -13,3 +14,5 @@ node 12 tee log.txt
 connect 1 2
 connect 2 3 5
 connect 3 4
+=======
+>>>>>>> b2540d7e5952389850ba27f2d16ce564b1fddc4f
