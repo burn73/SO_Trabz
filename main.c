@@ -10,9 +10,18 @@
 #include "biblioteca.h"
 
 int main(){
-
-	fazCenas();
+	
+	lerInserir();
 	
 	return 0;
 
 }
+
+
+
+
+
+
+
+
+

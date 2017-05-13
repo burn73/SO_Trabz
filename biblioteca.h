@@ -3,6 +3,6 @@
 
 char **split(char *buf);
 int readLine(int fd, char **line, int *size);
-void fazCenas();
+void lerInserir();
 
 #endif

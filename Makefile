@@ -1,8 +1,8 @@
 all: biblioteca clean
 
 biblioteca: biblioteca.o main.o
-	gcc -o a biblioteca.o main.o
-	./a
+	gcc -o proj biblioteca.o main.o
+	./proj ${ARGS}
 
 biblioteca.o: biblioteca.c
 	gcc -o biblioteca.o -c biblioteca.c -W -Wall -ansi -pedantic
