@@ -173,10 +173,11 @@ void insereConnections(node *REDE, char **linha){
 
 void lerApenas(node *REDE){
 
+	int i;
 	node* aux = REDE;
 
 	while(aux){
-		for(int i = 0; aux->connections[i] != '\0'; i++){
+		for(i = 0; aux->connections[i] != '\0'; i++){
 			printf("id: %d------> connections :%d\n", aux->id ,aux->connections[i]);
 		}
 		aux = aux->prox;
